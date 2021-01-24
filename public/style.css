@@ -1,0 +1,118 @@
+/* Fonts */
+
+@font-face {
+	font-family: "IntercomText";
+	font-weight: 300;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Book-ef7e93ba63695d5bb2bef482bf317a6e4cae50a470d28b96e548819ec120fa56.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Book-147b241686cc711ad668c625562e4101f8017768f5149339489924827d60a7fb.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomText";
+	font-weight: 400;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Regular-cd5d953e4cdfda0a6b60a0d21ede3459a1e0a0d7e3988b3e689d9d66dc5d279f.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Regular-4cab210e8fc7f1de3a4ee8c469cad4f791157e9bb686cbde15c0846b0065b541.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomText";
+	font-weight: 500;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Medium-56d74a32d06e76cedce6f40bf9a39bf15a383b279e364bd153c8985dbdb865fa.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Medium-cf74d20cc4a9cf93dc92f997498f6ce1cab359599ff98bdc572ad8fe5a3933c0.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomText";
+	font-weight: 600;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Semibold-021baa79f4e62ed8e351bbe4131465b0176756fe3d278850659a27abafc4d96c.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomText-Semibold-3553983216063c869e6094004d2a33c9f7a87df2d68a366be0f07dda2cdbd39e.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomGrot";
+	font-weight: 300;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Light-09d21a9e84909e3a1f31f0ddc992ecb4b38a4fa82587ce8e73f863aaf1d90cce.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Light-57d83efd7d777f19f97dd4167844634cc2d1ef53fd08d5942eb76318699bf770.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomGrot";
+	font-weight: 400;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Book-106f7a63806514cf8d7c7c44a685efe816a9bb8fef9528262628bc2967179049.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Book-7cdd66d4326d4f1e82824c459dd7c03811a5cdb2d2912765d81d2bbc09a72cfc.woff) format("woff")
+}
+@font-face {
+	font-family: "IntercomGrot";
+	font-weight: 500;
+	font-style: normal;
+	src: url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Regular-7a3b11cefab04f6d80126de6ec0ce95b55f9888849ee7ae4d9d84b1b1ea011db.woff2) format("woff2"), url(https://go.intercom.com/rs/258-CLW-344/images/IntercomGrot-Regular-b21dfbae338c2f2fa8f20aba5a429b2bc146bee78113f549536b0b0e95cf5b41.woff) format("woff")
+}
+
+/* Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: IntercomText, IntercomGrot, "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-family: IntercomGrot;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+p {
+  font-family: IntercomText;
+  max-width: 600px;
+  margin-top: 2px;
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: cyan;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 3px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  box-shadow: 2px 2px teal;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: yellow;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
