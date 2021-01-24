@@ -7,12 +7,9 @@ export default function jiraTicket(data) {
         "id": `${data["IssueType"]}`
       },
       "customfield_10107": `${data["description"]}`,
-      "reporter": {
-      "id": "5e375748213add0c9f8f64be"
-    },
-    "priority": {
-      id: `${data["priority"]}`
-    }
+      "priority": {
+        id: `${data["priority"]}`
+      }
     }
   }
 }
