@@ -1,3 +1,6 @@
+import jwtToken from '../middleware/jwtToken.js'
+import axios from 'axios'
+
 export default function routes(app) {
   app.get('/', (req, res) => {
     console.log(res.body)
