@@ -33,11 +33,10 @@ export default function routes(app) {
     const body = req.body["input_values"]
     const reqBody = JSON.stringify(jiraTiket(body))
     const token = jwtToken('POST', '/rest/api/2/issue', process.env.SHARED_SECRET)
-    axios.post({
-      url: '/rest/api/2/issue',
+    axios.post('https://tandadocs.atlassian.net/rest/api/2/issue',
       reqBody,
-      headers: { 'X-Atlassian-Token': 'nocheck', 'content-type': 'application/json', 'Authorization': `JWT ${token}` },
-    }).then((res) => {
+      { headers: { 'X-Atlassian-Token': 'nocheck', 'content-type': 'application/json', 'Authorization': `JWT ${token}` }}
+      ).then((res) => {
       console.log(res)
       res.send(canvas)
     }).catch(err => console.error(err))

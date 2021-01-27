@@ -2,7 +2,7 @@
   "name": "intercom_integration",
   "version": "1.0.0",
   "description": "Jira - Intercom Integration",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "nodemon app.js",
