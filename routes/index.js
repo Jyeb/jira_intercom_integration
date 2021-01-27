@@ -56,21 +56,21 @@ export default function routes(app) {
       "value": issueFields["customfield_10117"]
     }}
 
-  const header = {
-    'Authorization': `Bearer ${process.env.INTERCOM_ACCESS_TOKEN}`,
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
-  axios.post(`${intercomUrl}/contacts/search`, contactBody, { headers: header })
-    .then(res => {
-      const data = res.data.data
-      console.log(data)
-      data.map((user) => {
-      axios.post(`${intercomUrl}/messages`, emailBody(user.name, user.id), { headers: header })
-        .then((response) => console.log(JSON.stringify(response.data)))
-        .catch(error => console.log(JSON.stringify(error)))
+    const header = {
+      'Authorization': `Bearer ${process.env.INTERCOM_ACCESS_TOKEN}`,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+    axios.post(`${intercomUrl}/contacts/search`, contactBody, { headers: header })
+      .then(res => {
+        const data = res.data.data
+        console.log(data)
+        data.map((user) => {
+        axios.post(`${intercomUrl}/messages`, emailBody(user.name, user.id), { headers: header })
+          .then((response) => console.log(JSON.stringify(response.data)))
+          .catch(error => console.log(JSON.stringify(error)))
+        })
       })
+      .catch(err => console.log(err))
     })
-    .catch(err => console.log(err))
-  })
 }
