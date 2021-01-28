@@ -1,4 +1,4 @@
-export default function jiraTicket(data) {
+export default function jiraTicket(data, reporter) {
   return {
     "fields": {
       "project": { "key": "ISD", "id": "10029" },
@@ -7,6 +7,9 @@ export default function jiraTicket(data) {
         "id": `${data["IssueType"]}`
       },
       "customfield_10107": `${data["description"]}`,
+      "reporter": {
+        "id": `${reporter}`
+      },
       "priority": {
         id: `${data["priority"]}`
       }

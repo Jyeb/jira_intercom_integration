@@ -15,6 +15,7 @@ export default function intercomFrame() {
             ]
           },
           { type: "input", id: "Title", label: "Title (Summary)" },
+          { type: "input", id: "Email", label: "Your email"},
           {
             type: "single-select",
             id: "priority",

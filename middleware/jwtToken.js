@@ -12,5 +12,6 @@ export default function jwtToken(method, endpoint, sharedSecret) {
     "exp": now.add(3, 'minutes').unix(),
     "qsh": jwt.createQueryStringHash(req)
   }
-  return jwt.encode(tokenData, sharedSecret)
+  const token = jwt.encode(tokenData, sharedSecret)
+  return token
 }
