@@ -46,7 +46,7 @@ export default function routes(app) {
     const body = req.body
     const issue = res.req.body.issue
     const issueId = issue.key
-    const issueStatus = issue.fields.status.name
+    const issueStatus = req.body.transition.to_status
     const issueSummary = issue.fields.summary
     res.status(200).end()
     const issueFields = body["issue"]["fields"]
@@ -73,5 +73,5 @@ export default function routes(app) {
         })
       })
       .catch(err => console.log(err))
-    })
+  })
 }
