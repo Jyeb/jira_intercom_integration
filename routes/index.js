@@ -1,7 +1,7 @@
 import jwtToken from '../middleware/jwtToken.js'
-import intercomFrame from '../components/intercomFrame'
-import jiraTicket from '../components/jiraTicket'
-import emailBody from '../components/emailBody'
+import intercomFrame from '../components/intercomFrame.js'
+import jiraTicket from '../components/jiraTicket.js'
+import emailBody from '../components/emailBody.js'
 import axios from 'axios'
 
 const canvas = intercomFrame()
@@ -31,7 +31,7 @@ export default function routes(app) {
 
   app.post('/submit', (req,res) => {
     const body = req.body["input_values"]
-    const reqBody = JSON.stringify(jiraTiket(body))
+    const reqBody = JSON.stringify(jiraTicket(body))
     const token = jwtToken('POST', '/rest/api/2/issue', process.env.SHARED_SECRET)
     axios.post('https://tandadocs.atlassian.net/rest/api/2/issue',
       reqBody,
@@ -44,10 +44,12 @@ export default function routes(app) {
 
   app.post('/email_clients', (req, res) => {
     const body = req.body
-    console.log(res.status(200).end())
-    console.log(res.body)
+    const issue = res.req.body.issue
+    const issueId = issue.key
+    const issueStatus = issue.fields.status.name
+    const issueSummary = issue.fields.summary
+    res.status(200).end()
     const issueFields = body["issue"]["fields"]
-    const summary = issueFields["summary"]
     const contactBody = {
       "query": {
       "field": "email",
@@ -65,7 +67,7 @@ export default function routes(app) {
         const data = res.data.data
         console.log(data)
         data.map((user) => {
-        axios.post(`${intercomUrl}/messages`, emailBody(user.name, user.id), { headers: header })
+        axios.post(`${intercomUrl}/messages`, emailBody(user.name, user.id, issueId, issueStatus, issueSummary), { headers: header })
           .then((response) => console.log(JSON.stringify(response.data)))
           .catch(error => console.log(JSON.stringify(error)))
         })
