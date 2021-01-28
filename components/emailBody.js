@@ -7,9 +7,7 @@ export default function emailBody(name, user_id, issue_key, issue_status, issue_
   return {
     "message_type": "email",
     "subject": "Tanda Ticket - Status Update",
-    "body": `Hi ${name}, Your outstanding ticket: ${issue_key}:
-    
-    ${issue_summary} has been updated.` + msg,
+    "body": `Hi ${name}, Your outstanding ticket: ${issue_key}: ${issue_summary} has been updated.` + msg,
     "template": "plain",
     "from": {
       "type": "admin",
