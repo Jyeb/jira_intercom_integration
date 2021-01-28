@@ -92,7 +92,7 @@ export default function routes(app) {
         const contactSearch = await axios.post(`${intercomUrl}/contacts/search`, contactBody, { headers: header })
         const contacts = contactSearch.data.data
         contacts.map((contact) => {
-          axios.post(`${intercomUrl}/messages`, emailBody(user, issueStatus), { headers: header })
+          axios.post(`${intercomUrl}/messages`, emailBody(contact, issueFields), { headers: header })
             .then((response) => console.log(JSON.stringify(response.data)))
             .catch(error => console.log(JSON.stringify(error)))
         })
